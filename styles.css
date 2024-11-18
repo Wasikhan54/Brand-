@@ -148,93 +148,8 @@ a {
 
 .p5 p {}
 
-/* sticky header */
-header.sticky {
-	background: #fff;
-	box-shadow: 0 8px 6px -6px #D3D3D3;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-}
 
-*/ header {
-	position: fixed;
-	width: 100%;
-	background-color: transparent;
-	color: #fff;
-	-webkit-transition: all 0.4s ease;
-	transition: all 0.4s ease;
-	z-index: 1;
-}
 
-@media (max-width:1200px) {
-	.menu-Bar {
-		display: block;
-		top: 0px;
-	}
-
-	.menuWrap.open {
-		display: flex;
-		left: 0px;
-	}
-
-	.menuWrap {
-		position: fixed;
-		left: -210%;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		background: #175fab;
-		height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-flow: column;
-		transition: all 0.4s ease;
-		z-index: 3;
-		width: 100vw;
-	}
-
-	.menuWrap .menu li {
-		display: block;
-	}
-
-	.menuWrap .menu li a {
-		margin-bottom: 10px;
-		padding: 0;
-		display: block;
-		text-align: center;
-		margin-bottom: 15px;
-		padding-right: 0px;
-		margin-right: 0px;
-		color: #fff;
-		font-size: 15px;
-		text-transform: capitalize;
-	}
-
-	.container {
-		position: relative;
-	}
-
-	header .header-top {
-		display: none;
-	}
-
-	header .main-header ul.menu>li {
-		display: block;
-		padding: 0px;
-	}
-
-	header .main-header ul.menu>li a {
-		color: #fff;
-		padding: 0px;
-		text-align: left;
-	}
-
-	header .main-header ul.menu>li a:before {
-		display: none;
-	}
-}
 
 :root {
 	--uptownwebsitecolor: #4f008a;
@@ -253,33 +168,38 @@ header.sticky {
 }
 
 header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background: rgba(0, 0, 0, 0.35) !important;
-	z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1d1d1de6 !important;
+    z-index: 2;
+    height: 7vh;
+    display: flex;
+    align-items: center;
 }
 
+/* Menu Styles */
 .menu {
-	display: flex;
-	gap: 3rem;
-	margin: 29px 12px;
-
+    display: flex;
+    gap: 3rem;
+    margin: 29px 12px;
+    list-style: none;
+    align-items: center;
 }
 
+/* Menu Items */
 .menu li {
-	display: inline-block;
-	align-items: center !important;
-	margin: 13px 0px;
+    display: inline-block;
+    align-items: center !important;
+    margin: 13px 0px;
 }
 
-/* Position the anchor tag relative for the pseudo-element */
+/* Anchor Tag Underline Effect */
 .menu li a {
-	position: relative;
+    position: relative;
 }
 
-/* The pseudo-element for the underline effect */
 .menu li a::after {
 	content: "";
 	position: absolute;
@@ -302,32 +222,57 @@ header {
 	/* On hover, the line expands to full width */
 }
 
-
+/* Logo Styling */
 .logo img {
-	width: 63%;
-	height: 8vh;
-	margin: 12px auto;
+    width: 63%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 19px 0;
 }
 
-header {
-	background-color: #222222;
-	height: 7vh;
-	display: flex;
-	align-items: center;
-}
-
+/* Button Styling */
 .btn-a {
-	border-width: 1px;
-	border-style: solid;
-	border-image: initial;
-	border-radius: 5px;
-	font-size: 16px;
-	padding: 7px 20px;
-	background: var(--uptownwebsitered);
-	border-color: var(--uptownwebsitered) !important;
-	color: rgb(255, 255, 255) !important;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 7px 20px;
+    background: var(--uptownwebsitered);
+    border-color: var(--uptownwebsitered) !important;
+    color: rgb(255, 255, 255) !important;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    gap: 5px;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Animation */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
 
 /* ============================================= */
 /* HEro Secton */
@@ -378,7 +323,7 @@ header {
 	left: 7%;
 	color: white;
 	text-align: center;
-	z-index: 2;
+	z-index: 1;
 	/* Ensure it sits above the overlay */
 	width: 80%;
 	/* Set the width to 80% to reduce the heading width */
@@ -670,7 +615,15 @@ ul.dots-ul li::before {
 	display: flex;
 	justify-content: space-between;
 }
-
+.portfolio-img{
+	width: 100%!important;
+	height: 300px;
+	margin: 12px 0;
+}
+.portfolio-img img{
+	width: 100% !important;
+	height: 100%;
+}
 .btn-change {
 	width: 170px !important;
 	font-size: 16px;
@@ -695,6 +648,11 @@ ul.dots-ul li::before {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+.badges{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 
@@ -1104,7 +1062,7 @@ input:checked+.slider:before {
 	left: 0;
 	width: 100%;
 	height: 4px;
-	background-color: #d33f49;
+	background-color: var(--uptownwebsiteylw);
 	z-index: 0;
 }
 
@@ -1128,16 +1086,16 @@ input:checked+.slider:before {
 	width: 19px;
 	height: 19px;
 	border-radius: 50%;
-	border: 2px solid #d33f49;
+	border: 2px solid var(--uptownwebsiteylw);
 	background-color: #fff;
 }
 
 .step.active {
-	color: #d33f49;
+	color: var(--uptownwebsiteylw);
 }
 
 .step.active::before {
-	background-color: #d33f49;
+	background-color: var(--uptownwebsiteylw);
 	/* Fill color for active steps */
 }
 
@@ -1173,91 +1131,85 @@ input:checked+.slider:before {
 
 
 /* Testimonial */
-.testimonial {
-	width: 100%;
+/* Center the entire Testimonial Section */
+.Testimonial-main {
 	display: flex;
-	justify-content: center; /* Centering the testimonial container */
-}
-
-#testimonials {
-	display: flex;
-	justify-content: center; /* Center the testimonials horizontally */
-	align-items: center; /* Center the testimonials vertically */
-	min-height: 300px; /* Set minimum height */
-}
-
-.testimonial-slider {
-	width: 90%;
-	background-color: var(--light-color);
+	justify-content: center;
+	align-items: center;
+	padding: 50px 0; /* Add some padding for spacing */
+  }
+  
+  .testimonial-slider {
+	border: 1px solid #ddd;
+	max-width: 1200px;
+	width: 100% !important; /* Ensure it takes full width up to 1200px */
+	background-color: var(--lght-color);
 	padding: 30px;
 	border-radius: 10px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 	position: relative;
 	overflow: hidden;
-	margin: 0 auto; /* Center the slider */
-}
-
-.testimonial-list {
+	margin: 0 auto; /* Ensure the slider is centered within its container */
+	text-align: center; /* Center the content inside */
+  }
+  
+  /* Testimonial List and Cards */
+  .testimonial-list {
 	display: flex;
 	overflow: hidden;
-	justify-content: center; /* Center items horizontally */
-}
-
-.testimonial {
+	transition: transform 0.5s ease-in-out;
+  }
+  
+  .testimonial {
 	flex: 1 0 100%;
 	text-align: center;
 	padding: 20px;
 	transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-	display: flex;
-	flex-direction: column;
-	align-items: center;  /* Horizontally center the content */
-	justify-content: center; /* Vertically center the content */
-}
-
-.testimonial .bi-quote {
+  }
+  
+  .testimonial .bi-quote {
 	font-size: 4rem;
 	color: var(--sunglow);
 	opacity: 0.75;
-}
-
-.testimonial blockquote {
+  }
+  
+  .testimonial blockquote {
 	font-size: 1.25rem;
 	margin-inline: 20px;
-}
-
-.user-info {
+  }
+  
+  .user-info {
 	margin-top: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
-}
-
-.user-info img {
+  }
+  
+  .user-info img {
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
-}
-
-.user-details {
+  }
+  
+  .user-details {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-}
-
-.user-details .name {
+  }
+  
+  .user-details .name {
 	font-size: 1.15rem;
 	font-weight: 500;
-	color: var(--dark-cyan);
-}
-
-.user-details .company {
+	color: var(--uptownwebsiteheading);
+  }
+  
+  .user-details .company {
 	color: var(--muted-color);
-}
-
-/* button navigation */
-
-.nav {
+  }
+  
+  /* Button Navigation */
+  .nav {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -1265,38 +1217,35 @@ input:checked+.slider:before {
 	height: 42px;
 	font-size: 1.5rem;
 	border-radius: 50%;
-	background-color: var(--light-color);
+	background-color: var(--dot-color);
 	color: var(--paynes-gray);
 	transition: 0.3s;
 	opacity: 0;
-	z-index: 10; /* Ensure navigation buttons are above other elements */
-}
-
-.testimonial-slider:hover .nav {
+  }
+  
+  .testimonial-slider:hover .nav {
 	opacity: 1;
-}
-
-.nav:hover {
-	background-color: var(--dark-cyan);
+  }
+  
+  .nav:hover {
+	background-color: var(--uptownwebsiteylw);
 	color: var(--light-color);
-}
-
-.nav.prev {
+  }
+  
+  .nav.prev {
 	left: 10px;
-}
-
-.nav.next {
+  }
+  
+  .nav.next {
 	right: 10px;
-}
-
-/* Dot Navigation */
-
-.dots-container {
+  }
+  
+  /* Dot Navigation */
+  .dots-container {
 	text-align: center;
-	margin-top: 20px; /* Add margin for better positioning */
-}
-
-.dot {
+  }
+  
+  .dot {
 	width: 10px;
 	height: 10px;
 	display: inline-block;
@@ -1304,9 +1253,466 @@ input:checked+.slider:before {
 	margin-inline: 5px;
 	background-color: var(--dot-color);
 	transition: width 0.5s;
+  }
+  
+  .dot.active {
+	width: 30px;
+	background-color: var(--uptownwebsiteylw);
+  }
+  
+  /* Title Styling */
+  .testimonial-slider h1 {
+	text-align: center;
+	color: var(--uptownwebsiteylw);
+	margin-bottom: 30px; /* Add spacing between title and testimonials */
+  }
+  
+
+
+
+  /*  Forn section */
+
+  /*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-wrap {
+	background-color: var(--surface-color);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+	border-top: 3px solid var(--accent-color);
+	border-bottom: 3px solid var(--accent-color);
+	padding: 30px;
+	height: 100%;
+  }
+  
+  @media (max-width: 575px) {
+	.contact .info-wrap {
+	  padding: 20px;
+	}
+  }
+  
+  .contact .info-item {
+	margin-bottom: 40px;
+  }
+  
+  .contact .info-item i {
+	font-size: 20px;
+	color: var(--accent-color);
+	background: color-mix(in srgb, var(--accent-color), transparent 92%);
+	width: 44px;
+	height: 44px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50px;
+	transition: all 0.3s ease-in-out;
+	margin-right: 15px;
+  }
+  
+  .contact .info-item h3 {
+	padding: 0;
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 5px;
+	color: var(--uptownwebsiteylw);
+  }
+  
+  .contact .info-item p {
+	padding: 0;
+	margin-bottom: 0;
+	font-size: 14px;
+  }
+  
+  .contact .info-item:hover i {
+	background: var(--accent-color);
+	color: var(--contrast-color);
+  }
+  
+  .contact .php-email-form {
+	background-color: var(--surface-color);
+	height: 100%;
+	padding: 30px;
+	border-top: 3px solid var(--accent-color);
+	border-bottom: 3px solid var(--accent-color);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 575px) {
+	.contact .php-email-form {
+	  padding: 20px;
+	}
+  }
+  
+  .contact .php-email-form input[type=text],
+  .contact .php-email-form input[type=email],
+  .contact .php-email-form textarea {
+	font-size: 14px;
+	padding: 10px 15px;
+	box-shadow: none;
+	border-radius: 0;
+	color: var(--default-color);
+	background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+	border-color: color-mix(in srgb, var(--uptownwebsiteylw), transparent 80%);
+	border: 1px solid var(--uptownwebsiteylw );
 }
 
-.dot.active {
-	width: 30px;
-	background-color: var(--paynes-gray);
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+	  border: 1px solid var(--uptownwebsiteylw );
+  }
+  
+  .contact .php-email-form input[type=text]::placeholder,
+  .contact .php-email-form input[type=email]::placeholder,
+  .contact .php-email-form textarea::placeholder {
+	color: color-mix(in srgb, var(--default-color), transparent 70%);
+  }
+  
+  .contact .php-email-form button[type=submit] {
+	color: var(--contrast-color);
+	background: var(--uptownwebsiteylw);
+	border: 0;
+	padding: 10px 30px;
+	margin: 10px 0;
+	transition: 0.4s;
+	border-radius: 50px;
+  }
+  
+  .contact .php-email-form button[type=submit]:hover {
+	background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  }
+
+
+/* / Footer Section */
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+	color: var(--light-color);
+	background-color: var(--uptownwebsiteheading);
+	font-size: 14px;
+	padding-bottom: 50px;
+	position: relative;
+  }
+  
+  .footer .footer-newsletter {
+	background-color: color-mix(in srgb, var(--heading-color), transparent 95%);
+	padding: 50px 0;
+  }
+  
+  .footer .footer-newsletter h4 {
+	font-size: 24px;
+  }
+  
+  .footer .footer-newsletter .newsletter-form {
+	margin-top: 30px;
+	margin-bottom: 15px;
+	padding: 6px 8px;
+	position: relative;
+	background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+	border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+	box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+	display: flex;
+	transition: 0.3s;
+	border-radius: 50px;
+  }
+  
+  .footer .footer-newsletter .newsletter-form:focus-within {
+	border-color: var(--accent-color);
+  }
+  
+  .footer .footer-newsletter .newsletter-form input[type=email] {
+	border: 0;
+	padding: 4px;
+	width: 100%;
+	background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+	color: var(--default-color);
+  }
+  
+  .footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
+	outline: none;
+  }
+  
+  .footer .footer-newsletter .newsletter-form input[type=submit] {
+	border: 0;
+	font-size: 16px;
+	padding: 0 20px;
+	margin: -7px -8px -7px 0;
+	background: var(--accent-color);
+	color: var(--contrast-color);
+	transition: 0.3s;
+	border-radius: 50px;
+  }
+  
+  .footer .footer-newsletter .newsletter-form input[type=submit]:hover {
+	background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  .footer .footer-top {
+	padding-top: 50px;
+  }
+  
+  .footer .social-links a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid color-mix(in srgb, var(--uptownwebsiteylw), transparent 50%);
+	font-size: 16px;
+	color: color-mix(in srgb, var(--default-color), transparent 20%);
+	margin-right: 10px;
+	transition: 0.3s;
+  }
+  
+  .footer .social-links a:hover {
+	color: var(--accent-color);
+	border-color: var(--uptownwebsiteylw);
+  }
+  
+  .footer h4 {
+	font-size: 16px;
+	font-weight: bold;
+	position: relative;
+	padding-bottom: 12px;
+	color: var(--uptownwebsiteylw);
+  }
+  
+  .footer .footer-links {
+	margin-bottom: 30px;
+  }
+  
+  .footer .footer-links ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+  .footer .footer-links ul i {
+	margin-right: 3px;
+	font-size: 12px;
+	line-height: 0;
+	color: var(--accent-color);
+  }
+  
+  .footer .footer-links ul li {
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+  }
+  
+  .footer .footer-links ul li:first-child {
+	padding-top: 0;
+  }
+  
+  .footer .footer-links ul a {
+	display: inline-block;
+	color: color-mix(in srgb, var(--default-color), transparent 20%);
+	line-height: 1;
+  }
+  
+  .footer .footer-links ul a:hover {
+	color: var(--accent-color);
+  }
+  
+  .footer .footer-about a {
+	color: var(--heading-color);
+	font-size: 28px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-family: var(--heading-font);
+  }
+  
+  .footer .footer-contact p {
+	margin-bottom: 5px;
+  }
+  
+  .footer .copyright {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  }
+  
+  .footer .copyright p {
+	margin-bottom: 0;
+  }
+  
+  .footer .credits {
+	margin-top: 6px;
+	font-size: 13px;
+  }
+
+
+  @media (max-width: 768px) {
+    .hamburger-menu {
+		display: flex;
+        position: absolute;
+        top: 20px;
+        right: 46px;
+        z-index: 2;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: -4vh;
+        right: 2px;
+		height: 100vh;
+        background: rgba(14, 14, 14, 0.9);
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+        padding: 20px 0;
+		top:4;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+	.logo img{
+		width: 100%;
+		height: 9vh;
+	}
+	.hero-content {
+        top: 45%;
+        transform: translate(0%, -50%);
+        width: 90%;
+    }
+
+	.hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content h1::after {
+        width: 50%;
+    }
+
+    .hero-content p {        font-size: 16px;
+        width: 91%;
+        margin-left: 42px
+    }
+
+    .hero-content .btn-b {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+	.web-busniess-ul {
+        flex-direction: flex; /* Stacks the buttons vertically */
+        align-items: center;
+		flex-wrap: wrap;
+		gap: 10px;
+    }
+.content{
+    margin: 0 59px;
+}
+.step {
+    font-size: 13px;
+    padding: 13px 6px;
+}
+ 
+.responsive1{
+	width: 100%; /* Make columns take up full width */
+	padding: 10px; /* Add padding around each card */
+}
+
+.card {
+	padding: 20px; /* Reduce padding for smaller screens */
+	box-shadow: 0px 0px 15px -5px hsl(240, 9%, 80%);
+	width: 100%;
+	height: 76vh;
+	border-radius: 38px;
+}
+.card h4{
+	font-size: 42px;
+}
+
+.card-title {
+	font-size: 16px; /* Reduce font size for card titles */
+	text-align: center; /* Center-align titles */
+}
+
+.price {
+	font-size: 20px; /* Adjust price size */
+	text-align: center; /* Center-align price */
+}
+
+.pack-features {
+	max-height: 450px; /* Adjust the height for smaller screens */
+	overflow-y: auto; /* Enable scrolling */
+}
+.pack-features li {
+	
+	font-size: 18px; /* Adjust font size for features list */}
+
+.button {
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	margin: 10px 0;
+}
+span {
+	font-size: 16px;
+}
+}
+
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 37px;
+    }
+
+    
+
+    .hero-content .btn-b {
+        padding: 10px 22px;
+    }
+}
+
+@media (max-width: 390px) {
+    .menu li {
+        font-size: 15px}
+	.line {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 4px;
+        background-color: var(--uptownwebsiteylw);
+        z-index: 0;
+        transform: rotate(90deg);
+        left: -35px;	}
+	.steps{
+		flex-direction: column;
+
+	}
+	.step::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -1%;
+		transform: translateX(-50%);
+		width: 19px;
+		height: 19px;
+		border-radius: 50%;
+		border: 2px solid var(--uptownwebsiteylw);
+		background-color: #fff;
+	}
+	.step {
+        font-size: 13px;
+        padding: 18px 6px;
+    }
+	.scale{
+		display:block !important;
+
+	}
+	.logo img {
+        width: 55%;
+        height: 9vh;
+    }
+	.corner-image {
+	
+	display: none;}
 }

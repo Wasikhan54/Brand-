@@ -1,4 +1,15 @@
 // Toggle Navigation Menu
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburgerMenu = document.getElementById('hamburger-menu');
+  const menu = document.getElementById('menu');
+
+  hamburgerMenu.addEventListener('click', () => {
+      hamburgerMenu.classList.toggle('active');
+      menu.classList.toggle('active');
+  });
+});
 function toggleNav() {
   document.getElementById("topNav").classList.toggle("active");
   document.querySelector(".nav-btn").classList.toggle("active");
@@ -121,7 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // Testimonial
 
 
-
 const slider = document.querySelector(".testimonial-slider");
 const testimonials = document.querySelectorAll(".testimonial");
 const nextBtn = document.querySelector(".next");
@@ -224,5 +234,3 @@ document.addEventListener("DOMContentLoaded", function () {
   startAutoSlide();
   initApp();
 });
-
-
