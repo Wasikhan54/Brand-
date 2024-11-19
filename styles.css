@@ -178,7 +178,7 @@ header {
     width: 100%;
     background: #1d1d1de6 !important;
     z-index: 2;
-    height: 7vh;
+    height: 9vh;
     display: flex;
     align-items: center;
 }
@@ -229,7 +229,7 @@ header {
 /* Logo Styling */
 .logo img {
     width: 63%;
-    height: 8vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -418,7 +418,9 @@ header {
 	text-transform: capitalize;
 	text-align: center;
 }
-
+.dots-ul{
+	padding-left: 0 !important;
+}
 ul.dots-ul li {
 	font-size: 14px;
 	color: rgb(23, 23, 23);
@@ -448,6 +450,8 @@ ul.dots-ul li::before {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-left: 8%;
+	padding: 19px 0;
 }
 
 .counter-i {
@@ -1382,7 +1386,8 @@ input:checked+.slider:before {
   }
   
   .contact .php-email-form button[type=submit]:hover {
-	background: color-mix(in srgb, var(--accent-color), transparent 25%);
+	background: var(--uptownwebsiteheading);
+	color: var(--dot-color);
   }
 
 
@@ -1691,7 +1696,13 @@ span {
 	.steps{
 		flex-direction: column;
 
+		
 	}
+	.hero-content p {     
+		   font-size: 16px;
+        width: 91%;
+        margin-left:0
+    }
 	.step::before {
 		content: "";
 		position: absolute;
@@ -1719,6 +1730,40 @@ span {
 	.corner-image {
 	
 	display: none;}
+	.list{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 428px) {
+	.header{
+		height: 10vh;
+	}
+.logo img{
+	width: 63%;
+	height: 11vh;
+}	
+.hero-content p {
+	font-size: 16px;
+	/* width:0%; */
+	margin-left: 0px;
+}
+.list{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.corner-image{
+	display: none;
+}
+.scale1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 }
 
 
