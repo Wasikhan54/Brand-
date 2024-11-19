@@ -234,3 +234,40 @@ document.addEventListener("DOMContentLoaded", function () {
   startAutoSlide();
   initApp();
 });
+
+function expandBox() {
+  const box1 = document.querySelector('.box1');
+  box1.classList.toggle('expanded');  // Toggle the expanded class on click
+}
+
+
+
+  // Function to animate numbers
+  function animateCounter(element, start, end, duration) {
+  let range = end - start;
+  let current = start;
+  let increment = end > start ? 1 : -1;
+  let stepTime = Math.abs(Math.floor(duration / range));
+  
+  let counterInterval = setInterval(() => {
+    current += increment;
+    element.innerText = current;
+    
+    if (current === end) {
+      clearInterval(counterInterval);
+    }
+  }, stepTime);
+}
+
+// Trigger animation on page load
+window.onload = function() {
+  let counters = document.querySelectorAll('.counter-sec h3');
+  
+  counters.forEach(counter => {
+    let targetNumber = parseInt(counter.getAttribute('data-target'));
+    let startNumber = parseInt(counter.innerText); // Start from the current number in the HTML
+    let duration = 1000; // Duration of the animation in ms (1 second)
+    
+    animateCounter(counter, startNumber, targetNumber, duration);
+  });
+};
