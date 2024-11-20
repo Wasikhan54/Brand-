@@ -1,15 +1,33 @@
 // Toggle Navigation Menu
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true,     // Whether the animation should happen only once
+      offset: 100     // Distance from the bottom of the screen to start the animation
+    });
+  });
 
 
 document.addEventListener('DOMContentLoaded', () => {
   const hamburgerMenu = document.getElementById('hamburger-menu');
   const menu = document.getElementById('menu');
+  const menuLinks = document.querySelectorAll('#menu a'); // Select all links inside the menu
 
+  // Toggle menu visibility when hamburger is clicked
   hamburgerMenu.addEventListener('click', () => {
-      hamburgerMenu.classList.toggle('active');
-      menu.classList.toggle('active');
+    hamburgerMenu.classList.toggle('active');
+    menu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerMenu.classList.remove('active');
+      menu.classList.remove('active');
+    });
   });
 });
+
 function toggleNav() {
   document.getElementById("topNav").classList.toggle("active");
   document.querySelector(".nav-btn").classList.toggle("active");

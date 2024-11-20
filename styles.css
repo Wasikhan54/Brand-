@@ -544,15 +544,14 @@ ul.dots-ul li::before {
 
 
 .corner-image {
-	position: absolute;
-	bottom: -81%;
-	width: 300px;
-	margin-left: 5px;
-	border-radius: 8px;
-	right: 4%;
-	width: 30% !important;
+    position: absolute;
+    bottom: -65%;
+    width: 300px;
+    margin-left: 5px;
+    border-radius: 13px;
+    right: 4%;
+    width: 28% !important;
 }
-
 /* Additional responsive adjustments */
 @media (max-width: 768px) {
 	.corner-image {
@@ -1739,11 +1738,13 @@ span {
 }
 @media screen and (max-width: 428px) {
 	.header{
-		height: 10vh;
+		height: 18vh;
 	}
 .logo img{
 	width: 63%;
-	height: 11vh;
+	height: 12vh;
+	margin: 2px 0;
+
 }	
 .hero-content p {
 	font-size: 16px;
@@ -1764,8 +1765,58 @@ span {
 	justify-content: center;
 	align-items: center;
 }
+.hamburger-menu {
+	/* top: 0px; */
 }
+#counter-row{
+	margin-left: 0;
+}
+.menu li {
+	font-size: 18px;
+}
+.line {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 4px;
+	background-color: var(--uptownwebsiteylw);
+	z-index: 0;
+	transform: rotate(90deg);
+	left: -35px;	}
+.steps{
+	flex-direction: column;
 
+	
+}
+.hero-content p {     
+	   font-size: 16px;
+	width: 91%;
+	margin-left:0
+}
+.step::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -1%;
+	transform: translateX(-50%);
+	width: 19px;
+	height: 19px;
+	border-radius: 50%;
+	border: 2px solid var(--uptownwebsiteylw);
+	background-color: #fff;
+}
+.step {
+	font-size: 13px;
+	padding: 18px 6px;
+}
+.portfolio-img {
+    height: 300px;
+
+}
+.sec {
+    margin: 50px 0;
+}
+}
 
 
 
