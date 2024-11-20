@@ -1,11 +1,4 @@
 // Toggle Navigation Menu
-  document.addEventListener('DOMContentLoaded', function () {
-    AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true,     // Whether the animation should happen only once
-      offset: 100     // Distance from the bottom of the screen to start the animation
-    });
-  });
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -289,3 +282,14 @@ window.onload = function() {
     animateCounter(counter, startNumber, targetNumber, duration);
   });
 };
+
+
+
+//  animation
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      duration: 1200, // Animation duration in milliseconds
+      once: true,     // Whether the animation should happen only once
+      offset: 200     // Distance from the bottom of the screen to start the animation
+    });
+  });
